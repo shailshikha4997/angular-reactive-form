@@ -1,0 +1,56 @@
+<!-- <p>login works!</p> -->
+<div class="row">
+    <div class="col-4 offset-4">
+        <div class="card">
+            <div class="card-header">
+                <h3>User Data</h3>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="submit()" [formGroup]="formdata">
+                    <div class="form-group pt-3">
+                        <label for="">First Name</label>
+                        <input type="text" class="form-control" name="fname" formControlName="fname">
+                        <div class="text-danger" *ngIf="formdata.controls.fname.errors?.required && formdata.controls.fname.touched">First Name Required!</div>
+                    </div>
+
+                    <div class="form-group pt-3">
+                        <label for="">Last Name</label>
+                        <input type="text" class="form-control" name="lname" formControlName="lname">
+                        <div class="text-danger" *ngIf="formdata.controls.lname.errors?.required && formdata.controls.lname.touched">Last Name Required!</div>
+                    </div>
+
+                    <div class="form-group pt-3">
+                        <label for="">Height</label>
+                        <input type="number" class="form-control" name="height" formControlName="height">
+                        <div class="text-danger" *ngIf="formdata.controls.height.errors?.required && formdata.controls.height.touched">Height Required!</div>
+
+                    </div>
+
+                    <div class="form-group pt-3">
+                        <label for="">Age</label>
+                        <input type="number" class="form-control" name="age" formControlName="age">
+                        <div class="text-danger" *ngIf="formdata.controls.age.errors?.required && formdata.controls.age.touched">Your Age Is Required!</div>
+
+                    </div>
+
+                    <div class="form-group pt-3">
+                        <label for="">Weight</label>
+                        <input type="number" class="form-control" name="weight" formControlName="weight">
+                        <div class="text-danger" *ngIf="formdata.controls.weight.errors?.required && formdata.controls.weight.touched">Weight Required!</div>
+                    </div>
+
+                    <div class="form-group pt-3">
+                        <label for="">Address</label>
+                        <input type="text" class="form-control" name="address" formControlName="address">
+                        <div class="text-danger" *ngIf="formdata.controls.address.errors?.required && formdata.controls.address.touched">Address Is Required!</div>
+
+                    </div>
+
+                    <div class="form-group pt-3">
+                        <input type="submit" class="form-control btn btn-success" name="btn" [disabled]="!formdata.valid">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
